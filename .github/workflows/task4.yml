@@ -4,7 +4,7 @@ on:
     branches: [ arreglosJunio ]
 jobs:
   Assemble:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       GITHUB_LOGIN: ${{ github.actor }}
       GITHUB_PACKAGES: ${{ secrets.GITHUB_TOKEN }}
@@ -24,7 +24,7 @@ jobs:
       - run: echo "jiashi"
   Test:
     needs: Assemble
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       GITHUB_LOGIN: ${{ github.actor }}
       GITHUB_PACKAGES: ${{ secrets.GITHUB_TOKEN }}
