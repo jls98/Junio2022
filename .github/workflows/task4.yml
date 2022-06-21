@@ -4,7 +4,7 @@ on:
     branches: [ arreglosJunio ]
 jobs:
   Assemble:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       GITHUB_LOGIN: ${{ github.actor }}
       GITHUB_PACKAGES: ${{ secrets.GITHUB_TOKEN }}
@@ -24,7 +24,7 @@ jobs:
       - run: echo "jiashi"
   Test:
     needs: Assemble
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       GITHUB_LOGIN: ${{ github.actor }}
       GITHUB_PACKAGES: ${{ secrets.GITHUB_TOKEN }}
@@ -34,6 +34,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Configurando java
         uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '16'
       - name: Probando el código
         run: |
           chmod +x gradlew 
