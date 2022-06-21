@@ -18,7 +18,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '16'
-      - name: Construyendo el código
+      - name: Build el código
         run: |       
           chmod +x gradlew        
           ./gradlew build
@@ -31,7 +31,7 @@ jobs:
       GITHUB_PACKAGES: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Probando el código
+      - name: Publish el código
         run: |
           chmod +x gradlew 
           ./gradlew publish
