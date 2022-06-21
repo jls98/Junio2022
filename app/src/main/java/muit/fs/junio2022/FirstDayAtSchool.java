@@ -34,7 +34,7 @@ public class FirstDayAtSchool {
 	}
 
 	public int getNumberOf(String thingName) {
-		int number = 1;
+		int number = 0;
 		if (schoolbag.containsKey(thingName)) {
 			number = number + schoolbag.get(thingName).intValue();
 		}
